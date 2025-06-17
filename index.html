@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Melting Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ice Melting Simulator</h1>
+        
+        <div class="control-panel">
+            <div class="material-selector">
+                <label>select material：</label>
+                <select id="material">
+                    <option value="copper">copper</option>
+                    <option value="aluminum">aluminum</option>
+                    <option value="plastic">plastic</option>
+                </select>
+            </div>
+            
+            <div class="temperature-control">
+                <label>environment temperature (°C)：</label>
+                <input type="range" id="temperature" min="0" max="30" value="25">
+                <span id="temperature-value">25°C</span>
+            </div>
+
+            <button id="start-simulation">start simulation</button>
+            <button id="reset-simulation">reset</button>
+        </div>
+
+        <div class="simulation-area">
+            <div class="ice-block" id="ice-block">
+                <div class="ice-content"></div>
+            </div>
+            <div class="surface" id="surface"></div>
+        </div>
+
+        <div class="stats-panel">
+            <div class="stat">
+                <label>melt rate：</label>
+                <span id="melt-rate">0</span> g/min
+            </div>
+            <div class="stat">
+                <label>remaining mass：</label>
+                <span id="remaining-mass">100</span> g
+            </div>
+            <div class="stat">
+                <label>surface temperature：</label>
+                <span id="surface-temp">0</span> °C
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
